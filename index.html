@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <p>
+            <span class="input">
+                <input onchange="change_frame_src(this.value)" type="text" placeholder="Put here the url">
+                <span></span>	
+            </span>
+        </p>
+        <p class="info">If site loads, it is vulnerable to clickjacking (wait some seconds)</p>
+        <div id="frame_back">
+            <div id="secure">
+                <h1>Secure.</h1>
+                <p>Iframe loading failed, website is secured by X-frame-header</p>
+            </div>
+        </div>
+        <iframe id="jack_frame" src="https://google.com/"></iframe>
+        <div id="frame_front">
+            <div id="cors_warning">
+                <h1>Vulnerable</h1>
+                <p>CORS enabled</p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
